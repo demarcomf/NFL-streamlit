@@ -5,7 +5,7 @@ import pandas as pd
 # from pandas.core.indexes.base import Index
 # from pandas.core.indexes.numeric import NumericIndex  # pip install pandas openpyxl
 # import plotly.express as px  # pip install plotly-express
-conda install openpyxl
+
 import streamlit as st  # pip install streamlit
 import base64
 from PIL import Image
