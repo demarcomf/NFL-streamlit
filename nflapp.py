@@ -2,7 +2,6 @@
 
 from typing import NoReturn
 import pandas as pd
-from pandas._libs.tslibs import NullFrequencyError
 # from pandas.core import indexing
 # from pandas.core.indexes.base import Index
 # from pandas.core.indexes.numeric import NumericIndex  # pip install pandas openpyxl
