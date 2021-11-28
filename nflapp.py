@@ -61,6 +61,7 @@ st.markdown(side_bar, unsafe_allow_html=True)
 # df['predicted_winner'] = df['predicted_winner'].astype(str)
 def get_data():
     df = pd.read_csv('nfl_dashboard_v3.csv')
+    df.index = [""] * len(df)
     return df
 
 df = get_data()
