@@ -83,10 +83,7 @@ st.sidebar.header("Please Filter Here:")
 
 
 
-hometeamlist = st.sidebar.selectbox("Select Home Team", 
-options = df["home_team"].unique(),
-default = df["home_team"].unique())
-
+hometeamlist = st.sidebar.selectbox("Select Home Team", df["home_team"].unique())
 awayteamlist = st.sidebar.selectbox("Select Away Team", df["away_team"].unique())
 weeklist = st.sidebar.selectbox("Select Week of Season", df["season_week"].unique())
 
