@@ -1,11 +1,12 @@
 # from types import NoneType
 
+from typing import NoReturn
 import pandas as pd
+from pandas._libs.tslibs import NullFrequencyError
 # from pandas.core import indexing
 # from pandas.core.indexes.base import Index
 # from pandas.core.indexes.numeric import NumericIndex  # pip install pandas openpyxl
-# import plotly.express as px  # pip install plotly-express
-
+import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
 import base64
 from PIL import Image
@@ -16,41 +17,6 @@ from PIL import Image
 st.set_page_config(page_title="NFL Analytics", page_icon=":football:", layout="wide")
 
 st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">', unsafe_allow_html=True)
-
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: visible;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-
-
-
-# st.markdown("""
-# <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #000000;">
-#   <a class="navbar-brand" href="#" target="_blank">NFL Analytics</a>
-#   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-#     <span class="navbar-toggler-icon"></span>
-#   </button>
-#   <div class="collapse navbar-collapse" id="navbarNav">
-#     <ul class="navbar-nav">
-#       <li class="nav-item active">
-#         <a class="nav-link disabled" href="./"><u>Home</u><span class="sr-only">(current)</span></a>
-#       </li>
-#       <li class="nav-item">
-#         <a class="nav-link" href="https://github.com/tcjurgens/NFL-Analytics-Project" target="_blank"><u>Github</u></a>
-#       </li>
-#       <li class="nav-item dropdown">
-#         <a class="nav-link" href="https://www.linkedin.com/groups/12583968/" target="_blank"><u>LinkedIn</u></a>
-#         </li>
-#     </ul>
-#   </div>
-  
-# </nav>
-# """, unsafe_allow_html=True)
-# st.markdown(hide_st_style, unsafe_allow_html=True)
-
 
 side_bar = """
   <style>
@@ -117,7 +83,10 @@ st.sidebar.header("Please Filter Here:")
 
 
 
-hometeamlist = st.sidebar.selectbox("Select Home Team", df["home_team"].unique())
+hometeamlist = st.sidebar.selectbox("Select Home Team", 
+options = df["home_team"].unique(),
+default = df["home_team"].unique())
+
 awayteamlist = st.sidebar.selectbox("Select Away Team", df["away_team"].unique())
 weeklist = st.sidebar.selectbox("Select Week of Season", df["season_week"].unique())
 
@@ -163,6 +132,7 @@ st.markdown(main_title, unsafe_allow_html=True)
 
 # summary row
 PredictedWinner = df_selection["predicted_winner"]
+
 # PredictedWinner2 = PredictedWinner.tolist()
 # PredictedWinner3 = PredictedWinner2.get(object, default=None)
 ActualWinner = df_selection["actual_winner"]
