@@ -63,6 +63,7 @@ def get_data():
     df = pd.read_csv('nfl_dashboard_v3.csv')
     return df
 
+df = get_data()
 
 # st.table(df)
 
