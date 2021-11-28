@@ -8,7 +8,8 @@ import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
 import base64
 from PIL import Image
-
+import numpy as np
+import csv
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 # emojis2: https://slackmojis.com/categories/5-nfl-emojis
@@ -38,26 +39,29 @@ st.markdown(side_bar, unsafe_allow_html=True)
 
 # get excel 
 @st.cache
-def get_data_from_excel():
-    df = pd.read_excel(
-    	io='nfl_dashboard_v2.xlsx',
-    	engine='openpyxl',
-    	sheet_name='NFL',
-    	skiprows=3,
-    	usecols='B:H',
-    	nrows=150,
-    )
-    # make the season just the year
-    # df["Season"] = pd.DatetimeIndex(df["Season"]).year
-    df.index = [""] * len(df)
-    df.sort_values(by=['away_team'], ascending=False)
-    # df['predicted_winner'] = df['predicted_winner'].astype(str)
+# def get_data_from_excel():
+#     df = pd.read_excel(
+#     	io='nfl_dashboard_v2.xlsx',
+#     	engine='openpyxl',
+#     	sheet_name='NFL',
+#     	skiprows=3,
+#     	usecols='B:H',
+#     	nrows=150,
+#     )
+#     # make the season just the year
+#     # df["Season"] = pd.DatetimeIndex(df["Season"]).year
+#     df.index = [""] * len(df)
+#     df.sort_values(by=['away_team'], ascending=False)
+#     # df['predicted_winner'] = df['predicted_winner'].astype(str)
     
-    return df
+#     return df
 
-df = get_data_from_excel()
+# df = get_data_from_excel()
 
 # df['predicted_winner'] = df['predicted_winner'].astype(str)
+def get_data():
+    df = pd.read_csv('nfl_dashboard_v3.csv')
+    return df
 
 
 # st.table(df)
@@ -80,7 +84,6 @@ st.sidebar.header("Please Filter Here:")
     # options=list(names['labels']), # convert to list
     # default=["ARI"]
 # )
-
 
 
 hometeamlist = st.sidebar.selectbox("Select Home Team", df["home_team"].unique())
