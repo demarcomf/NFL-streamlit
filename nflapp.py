@@ -50,7 +50,7 @@ def get_data_from_excel():
     # make the season just the year
     # df["Season"] = pd.DatetimeIndex(df["Season"]).year
     df.index = [""] * len(df)
-    df.sort_values(by=['home_team', 'away_team'])
+    df.sort_values(by=['home_team', 'away_team'], ascending=True)
     # df['predicted_winner'] = df['predicted_winner'].astype(str)
     
     return df
