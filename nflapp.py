@@ -81,34 +81,34 @@ st.sidebar.header("Please Filter Here:")
 
 
 
-# hometeamlist = st.sidebar.selectbox("Select Home Team", df["home_team"].unique())
-# awayteamlist = st.sidebar.selectbox("Select Away Team", df["away_team"].unique())
-# weeklist = st.sidebar.selectbox("Select Week of Season", df["season_week"].unique())
+hometeamlist = st.sidebar.selectbox("Select Home Team", df["home_team"].unique())
+awayteamlist = st.sidebar.selectbox("Select Away Team", df["away_team"].unique())
+weeklist = st.sidebar.selectbox("Select Week of Season", df["season_week"].unique())
 
 
 
-HomeTeam = st.sidebar.multiselect(
-    "Select the Home Team:",
-    options=df["home_team"],
-    default=['TB'],
-)
+# HomeTeam = st.sidebar.multiselect(
+    # "Select the Home Team:",
+    # options=df["home_team"],
+    # default=['TB'],
+# )
+# 
+# AwayTeam = st.sidebar.multiselect(
+    # "Select the Away Team:",
+    # options=df["away_team"],
+    # default=['DAL'],
+# )
 
-AwayTeam = st.sidebar.multiselect(
-    "Select the Away Team:",
-    options=df["away_team"],
-    default=['DAL'],
-)
-
-SeasonWeek = st.sidebar.multiselect(
-    "Select the Week:",
-    options=df["season_week"].unique(),
-    default=df['1'],
-)
+# SeasonWeek = st.sidebar.multiselect(
+    # "Select the Week:",
+    # options=df["season_week"].unique(),
+    # default=df['1'],
+# )
 
 # Starting_QB = st.sidebar.multiselect(
-#     "Select the Starting QB:",
-#     options=df["Starting_QB"].unique(),
-#     default=df["Starting_QB"].unique()
+    # "Select the Starting QB:",
+    # options=df["Starting_QB"].unique(),
+    # default=df["Starting_QB"].unique()
 # )
 
 df_selection = df.query(
