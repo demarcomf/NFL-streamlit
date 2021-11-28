@@ -62,6 +62,7 @@ st.markdown(side_bar, unsafe_allow_html=True)
 def get_data():
     df = pd.read_csv('nfl_dashboard_v3.csv')
     df.index = [""] * len(df)
+    series
     return df
 
 df = get_data()
@@ -171,8 +172,7 @@ st.markdown("""---""")
 nfl_sched = Image.open('nfl-schedule-2021.png')
 nfl_schedule = '<p style="font-family:sans-serif; color:White; font-size: 32px;"><u>2021 NFL Schedule:</u></p>'
 st.markdown(nfl_schedule, unsafe_allow_html=True)
-schedule_description = '<p style="font-family:sans-serif; color:White; font-size: 18px;"><u>Instructions:</u> Select desired team from top row and choose corresponding opponent based on the week of the season for accurate model filtering</p>'
-st.markdown(schedule_description, unsafe_allow_html=True)
+
 st.image(nfl_sched)  
    
 # 
