@@ -62,7 +62,7 @@ st.markdown(side_bar, unsafe_allow_html=True)
 def get_data():
     df = pd.read_csv('nfl_dashboard_v3.csv')
     df.index = [""] * len(df)
-    series
+    
     return df
 
 df = get_data()
