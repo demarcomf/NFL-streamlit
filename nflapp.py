@@ -128,7 +128,7 @@ st.markdown(main_title, unsafe_allow_html=True)
 # st.markdown("Moist")
 
 # summary row
-PredictedWinner = df_selection["predicted_winner"].notna()
+PredictedWinner = df_selection["predicted_winner"]
 
 # PredictedWinner2 = PredictedWinner.tolist()
 # PredictedWinner3 = PredictedWinner2.get(object, default=None)
