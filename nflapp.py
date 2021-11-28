@@ -55,6 +55,7 @@ def get_data_from_excel():
     return df
 
 df = get_data_from_excel()
+df.sort_values(by='home_team' & 'away_team')
 # df['predicted_winner'] = df['predicted_winner'].astype(str)
 
 
