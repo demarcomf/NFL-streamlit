@@ -134,7 +134,7 @@ st.markdown(main_title, unsafe_allow_html=True)
 # st.markdown("Moist")
 
 # summary row
-PredictedWinner = df_selection["predicted_winner"]
+PredictedWinner = df_selection["predicted_winner"].iloc[0]
 
 
 # PredictedWinner2 = PredictedWinner.tolist()
