@@ -140,7 +140,7 @@ PredictedWinner = df_selection["predicted_winner"].iloc[0]
 # PredictedWinner2 = PredictedWinner.tolist()
 # PredictedWinner3 = PredictedWinner2.get(object, default=None)
 ActualWinner = df_selection["actual_winner"].iloc[0]
-WinProbability = df_selection["win_probability"].iloc[0]
+WinProbability = df_selection["win_probability"]
 # star_rating = ":football:" * (WinProbability, 0)
 # average_spread_result = round(df_selection["Spread_Result"].mean(), 2)
 
