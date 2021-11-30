@@ -92,10 +92,14 @@ try:
     hometeamlist = st.sidebar.selectbox("Select Home Team", df["home_team"].unique())
 except ValueError:
     st.write("Please select a valid game")
-awayteamlist = st.sidebar.selectbox("Select Away Team", df["away_team"].unique())
-weeklist = st.sidebar.selectbox("Select Week of Season", df["season_week"].unique())
-
-
+try:
+    awayteamlist = st.sidebar.selectbox("Select Away Team", df["away_team"].unique())
+except ValueError:
+    st.write("Please select a valid game")
+try:
+    weeklist = st.sidebar.selectbox("Select Week of Season", df["season_week"].unique())
+except ValueError:
+    st.write("Please select a valid game")
 
 # HomeTeam = st.sidebar.multiselect(
     # "Select the Home Team:",
