@@ -91,7 +91,7 @@ st.sidebar.header("Please Filter Here:")
 try:
     hometeamlist = st.sidebar.selectbox("Select Home Team", df["home_team"].unique())
 except ValueError:
-    st.write("")
+    st.write("Please select a valid game")
 awayteamlist = st.sidebar.selectbox("Select Away Team", df["away_team"].unique())
 weeklist = st.sidebar.selectbox("Select Week of Season", df["season_week"].unique())
 
