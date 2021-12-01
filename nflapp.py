@@ -165,29 +165,20 @@ with left_column:
     predicted_title = '<p style="font-family:sans-serif; color:White; font-size: 32px;"><u>Predicted Winner:</u></p>'
     st.markdown(predicted_title, unsafe_allow_html=True)
     # st.subheader({PredictedWinner}, anchor=None)
-try:       
     st.subheader(f"{PredictedWinner}")
-except ValueError:
-    st.write("Please choose a valid matchup")
 with middle_column:
     winner_title = '<p style="font-family:sans-serif; color:White; font-size: 32px;"><u>Actual Winner:</u></p>'
     st.markdown(winner_title, unsafe_allow_html=True)
     # st.subheader("Actual Winner:")
     # st.subheader({ActualWinner}, anchor=None)
-try:
     st.subheader(f"{ActualWinner}")
-except ValueError:
-    st.write("Please choose a valid matchup")
 with right_column:
     model_title = '<p style="font-family:sans-serif; color:White; font-size: 32px;"><u>Model Confidence:</u></p>'
     # st.subheader("Model Confidence:")
     st.markdown(model_title, unsafe_allow_html=True)
     # st.markdown("Using our ML model, this was the accuracy of prediction")
     # st.subheader({WinProbability}, anchor=None)
-try:
     st.subheader(f"{WinProbability}")
-except ValueError:
-    st.write("Please choose a valid matchup")
     
    
 # 
