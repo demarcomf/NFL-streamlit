@@ -143,7 +143,7 @@ st.markdown(main_title, unsafe_allow_html=True)
 try:
     PredictedWinner = df_selection["predicted_winner"].iloc[0]
 except ValueError:
-    st.error('Please choose a valid matchup')
+    st.write("Please choose a valid matchup")
 
 
 # PredictedWinner2 = PredictedWinner.tolist()
@@ -151,11 +151,11 @@ except ValueError:
 try:
     ActualWinner = df_selection["actual_winner"].iloc[0]
 except ValueError:
-    st.error('Please choose a valid matchup')
+    st.write("Please choose a valid matchup")
 try:
     WinProbability = df_selection["win_probability"].iloc[0]
 except ValueError:
-    st.error('Please choose a valid matchup')
+    st.write("Please choose a valid matchup")
 
 # star_rating = ":football:" * (WinProbability, 0)
 # average_spread_result = round(df_selection["Spread_Result"].mean(), 2)
